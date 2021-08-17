@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { SortingService } from "../../sorting.service";
 import { UserService } from "../../user.service";
+import {User} from "../../shared/interfaces";
+
 @Component({
   selector: 'app-filtered-users',
   templateUrl: './filtered-users.component.html',
@@ -9,11 +11,26 @@ import { UserService } from "../../user.service";
 })
 export class FilteredUsersComponent implements OnInit {
 
+  private _users: User[] = [];
+  @Input() get users(): User[] {
+    return this._users;
+  }
+
+  set users(value: User[]) {
+    if(value) {
+      this.filteredUsers = this._users = value;
+    } else {
+
+    }
+  }
+
+
   filteredUsers: any[] = [];
 
   constructor(private sortingService: SortingService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.filteredUsers = this._users;
   }
 
   sort(prop: string) {
