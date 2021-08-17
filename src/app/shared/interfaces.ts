@@ -3,5 +3,7 @@ export interface User{
 	age: number;
 	gender: string;
 	department: string;
-	address: string;
+	address: {
+		[key: string]: User;
+	};
 }

@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilteredUsersComponent implements OnInit {
 
+  filteredUsers: any[] = [];
+  
   constructor() { }
 
   ngOnInit(): void {
