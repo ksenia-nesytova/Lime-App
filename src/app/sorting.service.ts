@@ -10,7 +10,10 @@ export class SortingService {
 
   sort(collection: any[], prop: any) {
 
-    collection.sort((a: any, b:any) => {
+    this.property = prop;
+    this.direction = (this.property === prop) ? this.direction * -1 : 1;
+
+    collection.sort((a: any, b: any) => {
       let aValue: any;
       let bValue: any;
 
@@ -20,7 +23,7 @@ export class SortingService {
       if(aValue === bValue) {
         return 0;
       } else if(aValue > bValue) {
-        return this.direction + -1;
+        return this.direction * -1;
       } else {
         return this.direction * 1;
       }
