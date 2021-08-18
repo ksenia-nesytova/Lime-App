@@ -1,0 +1,20 @@
+<div class="filter-option">
+  <p>Gender({{genderOptions.length}})</p>
+  <div *ngFor="let opt of genderOptions">
+    <input type="checkbox" value="{{ opt }}" name="Gender"> {{opt}}
+  </div>
+</div>
+
+<div class="filter-option">
+  <p>Department({{departmentOptions.length}})</p>
+  <div *ngFor="let opt of departmentOptions">
+    <input type="checkbox" value="{{ opt }}" name="Department"> {{opt}}
+  </div>
+</div>
+
+<div class="filter-option">
+  <p>City({{cityOptions.length}})</p>
+  <div *ngFor="let opt of cityOptions">
+    <input type="checkbox" value="{{ opt }}" name="City"> {{ opt }}
+  </div>
+</div>
