@@ -1,0 +1,14 @@
+th {
+    background: #5fba7d;
+    text-align: center;
+    padding: .5em 1.2em;
+}
+
+th:hover, th:focus {
+  background: #5f9671;
+}
+
+
+td {
+  padding: .2em .6em;
+}

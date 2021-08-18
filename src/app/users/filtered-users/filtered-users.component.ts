@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SortingService } from "../../sorting.service";
 import { UserService } from "../../user.service";
-import {User} from "../../shared/interfaces";
+import { User } from "../../shared/interfaces";
 
 @Component({
   selector: 'app-filtered-users',
@@ -19,9 +19,7 @@ export class FilteredUsersComponent implements OnInit {
   set users(value: User[]) {
     if(value) {
       this.filteredUsers = this._users = value;
-    } else {
-
-    }
+    } 
   }
 
 
