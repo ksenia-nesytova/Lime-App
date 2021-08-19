@@ -5,7 +5,7 @@
       <th (click)="sort('age')">Age</th>
       <th (click)="sort('gender')">Gender</th>
       <th (click)="sort('department')">Department</th>
-      <th (click)="sort('address')">Address</th>
+      <th (click)="sort('address')" colspan="2" class="hidden">Address</th>
     </tr>
   </thead>
   <tr *ngFor="let user of filteredUsers">
@@ -13,5 +13,6 @@
     <td>{{user.age}}</td>
     <td>{{user.gender}}</td>
     <td>{{user.department}}</td>
-    <td>{{user.address.city}}, {{user.address.street}}</td>
+    <td class="hidden">{{user.address.city}}</td>
+    <td class="hidden">{{user.address.street}}</td>
 </table>
