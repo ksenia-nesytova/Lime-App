@@ -1,20 +1,31 @@
-<div class="filter-option">
-  <p>Gender({{genderOptions.length}})</p>
-  <div *ngFor="let opt of genderOptions">
-    <input type="checkbox" value="{{ opt }}" name="Gender"> {{opt}}
+<div class="filters">
+  <div class="filter-option">
+    <p>Gender({{genderOptions.length}})</p>
+    <div *ngFor="let opt of genderOptions">
+      <input type="checkbox" value="{{ opt }}" name="Gender"> {{opt}}
+    </div>
   </div>
-</div>
+  <!-- <form [formGroup]="form" (ngSubmit)="submit()">
+    <label formArrayName="orders" *ngFor="let order of ordersFormArray.controls; let i = index">
 
-<div class="filter-option">
-  <p>Department({{departmentOptions.length}})</p>
-  <div *ngFor="let opt of departmentOptions">
-    <input type="checkbox" value="{{ opt }}" name="Department"> {{opt}}
-  </div>
-</div>
+      <input type="checkbox" [formControl]="i">
 
-<div class="filter-option">
-  <p>City({{cityOptions.length}})</p>
-  <div *ngFor="let opt of cityOptions">
-    <input type="checkbox" value="{{ opt }}" name="City"> {{ opt }}
-  </div>
+      {{users[i].gender}}
+    </label>
+    <button class="btn btn-success">submit</button>
+  </form> -->
+  <!-- <div class="filter-option">
+    <p>Department({{departmentOptions.length}})</p>
+    <div *ngFor="let opt of departmentOptions">
+      <input type="checkbox" value="{{ opt }}" name="Department"> {{opt}}
+    </div>
+  </div> -->
+
+  <!-- <div class="filter-option">
+    <p>City({{cityOptions.length}})</p>
+    <div *ngFor="let opt of cityOptions">
+      <input type="checkbox" value="{{ opt }}" name="City"> {{ opt }}
+    </div>
+  </div> -->
+
 </div>

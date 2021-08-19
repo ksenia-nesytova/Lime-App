@@ -6,19 +6,27 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
 import { FilteredUsersComponent } from './users/filtered-users/filtered-users.component';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule }   from '@angular/forms';
+
+import { SortingService } from "./sorting.service";
+import { FiltersComponent } from './filters/filters.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
-    FilteredUsersComponent
+    FilteredUsersComponent,
+    FiltersComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [SortingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
-// import { map, catchError } from 'rxjs/operators';
 
 import { User } from '../app/shared/interfaces';
 
@@ -14,6 +13,8 @@ export class UserService {
 
   constructor(
     private http: HttpClient) { }
+
+    users: User[] = [];
 
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.usersUrl);

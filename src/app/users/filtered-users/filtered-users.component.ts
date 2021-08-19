@@ -10,7 +10,6 @@ import { User } from "../../shared/interfaces";
   providers: [ SortingService, UserService],
 })
 export class FilteredUsersComponent implements OnInit {
-
   private _users: User[] = [];
   @Input() get users(): User[] {
     return this._users;
@@ -19,7 +18,7 @@ export class FilteredUsersComponent implements OnInit {
   set users(value: User[]) {
     if(value) {
       this.filteredUsers = this._users = value;
-    } 
+    }
   }
 
 

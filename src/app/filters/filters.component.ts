@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { User } from '../shared/interfaces';
 import { UserService } from "../user.service";
 
@@ -12,7 +12,8 @@ export class FiltersComponent implements OnInit {
 users: User[] = [];
 
 
-@Input() genderOptions: string[] = this.users.map(item => item.gender)
+
+genderOptions: string[] =  this.users.map(item => item.gender)
     .filter((value, index, self) => self.indexOf(value) === index);
 
 cityOptions = this.users.map(item => item.address.city)
