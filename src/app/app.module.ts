@@ -11,13 +11,15 @@ import { ReactiveFormsModule }   from '@angular/forms';
 
 import { SortingService } from "./sorting.service";
 import { FiltersComponent } from './filters/filters.component';
+import { FiltersPipe } from './filters.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
     FilteredUsersComponent,
-    FiltersComponent
+    FiltersComponent,
+    FiltersPipe
   ],
   imports: [
     BrowserModule,
