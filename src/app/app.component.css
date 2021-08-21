@@ -10,3 +10,11 @@
   align-items: center;
   max-width: 1200px;
 }
+
+
+@media screen and (max-width: 900px) {
+  .container {
+    flex-direction: row;
+    justify-content: center;
+    }
+}

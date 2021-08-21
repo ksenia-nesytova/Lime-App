@@ -1,22 +1,26 @@
 <div class="filters">
   <div class="filter-option">
-    <p>Gender({{genderOptions.length}})</p>
-    <div *ngFor="let opt of genderOptions">
-      <input type="checkbox" value="{{ opt }}" name="Gender"> {{opt}}
+    <p>Gender</p>
+    <div *ngFor="let opt of genderOptions | filters">
+      <input (change)="getFiltered(opt)"
+      type="checkbox"
+      value="{{ opt }}"
+      name="Gender"
+      [(ngModel)]="opt.gender" class="options"> {{opt}} ({{filteredAmount}})
     </div>
   </div>
 
   <div class="filter-option">
     <p>Department({{departmentOptions.length}})</p>
     <div *ngFor="let opt of departmentOptions">
-      <input type="checkbox" value="{{ opt }}" name="Department"> {{opt}}
+      <input type="checkbox" value="{{ opt }}" name="Department"  class="options"> {{opt}}
     </div>
   </div>
 
   <div class="filter-option">
     <p>City({{cityOptions.length}})</p>
     <div *ngFor="let opt of cityOptions">
-      <input type="checkbox" value="{{ opt }}" name="City"> {{ opt }}
+      <input type="checkbox" value="{{ opt }}" name="City"  class="options"> {{ opt }}
     </div>
   </div>
 </div>
