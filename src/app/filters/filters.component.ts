@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { User } from '../shared/interfaces';
 import { UserService } from "../user.service";
 
@@ -14,14 +14,6 @@ users: User[] = [];
 genderOptions: string[] = [];
 departmentOptions: string[] = [];
 cityOptions: any[] = [];
-
-//
-// this.cityOptions =  data.map(item => item.address.city)
-//     .filter((value, index, self) => self.indexOf(value) === index);
-
-// departmentOptions = this.users.map(item => item.department)
-//     .filter((value, index, self) => self.indexOf(value) === index);
-
 
     async getOptions() {
       let data = await this.userService.getUsers()
@@ -47,7 +39,15 @@ cityOptions: any[] = [];
       this.userService
         .getUsers()
         .subscribe((users: User[]) => (this.users = users));
-      this.getOptions()
+      this.getOptions(); this.onCheck();
     }
+  @Output() filter = new EventEmitter();
 
+       onCheck() {
+        this.filter.emit(
+        this.users
+            .filter(users => users.gender)
+            .map(users => users.gender));
+            console.log(this.users)
+      }
 }
