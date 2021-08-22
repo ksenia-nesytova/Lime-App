@@ -11,7 +11,7 @@ import { ReactiveFormsModule }   from '@angular/forms';
 
 import { SortingService } from "./sorting.service";
 import { FiltersComponent } from './filters/filters.component';
-import { FiltersPipe } from './filters.pipe';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +19,7 @@ import { FiltersPipe } from './filters.pipe';
     UsersComponent,
     FilteredUsersComponent,
     FiltersComponent,
-    FiltersPipe
+    
   ],
   imports: [
     BrowserModule,
